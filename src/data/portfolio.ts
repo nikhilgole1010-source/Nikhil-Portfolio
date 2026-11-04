@@ -20,7 +20,7 @@ export const profile = {
   email: 'nikhilgole1010@gmail.com',
   links: {
     linkedin: 'https://www.linkedin.com/in/nikhil-gole-6621231a6?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-    github: '',
+    github: 'https://github.com/nikhilgole1010-source',
   },
   resumePdf: '/assets/Nikhil_Gole_Resume.pdf',
   portrait: {

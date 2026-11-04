@@ -56,10 +56,10 @@ This rebuilds the responsive WebP portraits and the social share image in `publi
 ```
 src/
   data/portfolio.ts        ← single source of truth (from the resume)
-  App.tsx                  ← stages: opening → profile select → home; overlays
+  App.tsx                  ← home page shell + overlays
   components/
-    OpeningSequence        ← black → studio card → NIKHIL → THE SERIES → portrait → ▶ PLAY
-    ProfileSelector        ← "Who's watching?" (changes section order only)
+    OpeningSequence        ← optional replay intro sequence
+    ProfileSelector        ← optional profile selector component
     Navbar                 ← hide-on-scroll nav, profile switcher, mobile menu
     Hero                   ← billboard: parallax portrait, particles, light streaks, floating chips
     PlayIntro              ← ▶ Play Intro: zoom into portrait → highlight reel (pause, ← →, tap zones)
@@ -82,9 +82,8 @@ scripts/build-images.mjs   ← portrait/share-image pipeline (sharp)
 
 ## Accessibility and performance
 
-- `prefers-reduced-motion` is respected: smooth scroll, the custom cursor, tilt, particles, grain and the pinned horizontal scroll turn off, and the opening jumps straight to its final frame.
+- `prefers-reduced-motion` is respected: smooth scroll, tilt, particles and pinned horizontal scroll reduce motion where supported.
 - Hover effects only run on devices with a precise pointer. Touch devices get tap interactions and native swipe rails.
-- The custom cursor appears only with a mouse or trackpad.
 - Overlays close with Esc, and the highlight reel supports Space and the ← → keys.
 - Portraits are responsive WebP files (25–90 KB). Overlays are code-split, and particles pause when they're off screen.
 
@@ -93,5 +92,3 @@ scripts/build-images.mjs   ← portrait/share-image pipeline (sharp)
 - **Opening:** Enter or Esc skips it.
 - **Play Intro:** Space pauses, ← and → change slides, Esc closes.
 - **Project and resume overlays:** Esc closes.
-# Nikhil-Portfolio
-# Nikhil-Portfolio
